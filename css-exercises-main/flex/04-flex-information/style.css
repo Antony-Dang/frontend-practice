@@ -37,14 +37,6 @@ img {
 .info {
   max-width: 200px;
 }
-
-
-img {
-  width: 200;
-  height: 200;
-  background-color: grey;
-}
-
 body {
   text-align: center;
 }
