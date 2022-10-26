@@ -31,8 +31,6 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
 }
 
 .header {
@@ -49,11 +47,14 @@ body {
 }
 
 .sidebar {
-  width: 300px;
+  flex-shrink: 0;
+  padding: 16px;
 }
 
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -64,16 +65,15 @@ a {
 }
 
 .content {
+  padding: 32px;
   display: flex;
-  justify-content: space-around;
-  flex: 0 0 50%;
   flex-wrap: wrap;
 }
 
 .card {
-  height: 150px;
-  width: 150px;
-  padding: 15px;
+  padding: 16px;
+  margin: 16px;
+  width: 300px;
 }
 
 
