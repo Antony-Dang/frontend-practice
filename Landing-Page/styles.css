@@ -9,6 +9,30 @@ header {
     flex: 1 50%
 }
 
+.top_header {
+    display: flex;
+    justify-content: space-around;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+
 .info {
     background-color: white;
     flex: 1 50%
