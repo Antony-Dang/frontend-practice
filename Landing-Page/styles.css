@@ -5,16 +5,26 @@ body {
 
 header {
     background-color: #1F2937;
+    color: white;
+    flex: 1 50%
 }
 
 .info {
     background-color: white;
+    flex: 1 50%
 }
 
 .quote {
     background-color: #E5E7EB;
+    flex: 1 50%;
+}
+
+.action {
+    flex: 1 50%;
 }
 
 footer {
     background-color: #1F2937;
+    color: white;
+    flex: 1 50%
 }
