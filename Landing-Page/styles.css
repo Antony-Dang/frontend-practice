@@ -6,13 +6,33 @@ body {
 header {
     background-color: #1F2937;
     color: white;
-    flex: 1 50%
+    flex: 1 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 .top_header {
     display: flex;
     justify-content: space-around;
 }
+
+.header_info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_image {
+    background-color: aqua;
+    height: 200px;
+    width: 200px;
+}
+
 
 ul {
     list-style-type: none;
