@@ -16,15 +16,43 @@ header {
     justify-content: space-around;
 }
 
+.top_header > * {
+    min-width: 0;
+}
+
 .header_info {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.header_text {
+.header_info > *{
+    min-width: 0;
+}
+
+.header_text > * {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.header_title {
+    font-family: "Hero";
+    font-size: 48px;
+    font-weight: bolder;
+    color: #F9FAF8;
+    
+}
+
+.header_summary {
+    font-size: 18px;
+    color: #E5E7EB;
+}
+
+.sign_up {
+    font-size: 24px;
+    background-color: #3882F6;
+    color: #E5E7EB;
 }
 
 .header_image {
