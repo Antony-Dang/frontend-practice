@@ -10,10 +10,8 @@ function getPlayerSelectedChoice() {
     while (!hasSelected) {
         inputSelection = prompt("Select from 'Rock' / 'Paper' / 'Scissors': ");
         inputSelection = inputSelection.toLowerCase();
-        
         inputSelection = inputSelection[0].toUpperCase() + inputSelection.slice(1, inputSelection.length);
 
-        console.log(inputSelection);
         if (playables.includes(inputSelection)) {
             hasSelected = true;
             return inputSelection;
@@ -32,23 +30,23 @@ function playGame(playerSelection, computerSelection) {
     }
     else if (playerSelection === 'Rock') {
         if (computerSelection === 'Paper') {
-            console.log("You lose! ${computerSelection} beats ${playerSelection}");
+            console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
         } else {
-            console.log("You win! ${playerSelection} beats ${computerSelection}");
+            console.log(`You win! ${playerSelection} beats ${computerSelection}`);
         }
     }
     else if (playerSelection === 'Paper') {
         if (computerSelection === 'Scissors') {
-            console.log("You lose! ${computerSelection} beats ${playerSelection}");
+            console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
         } else {
-            console.log("You win! ${playerSelection} beats ${computerSelection}");
+            console.log(`You win! ${playerSelection} beats ${computerSelection}`);
         }
     }
     else if (playerSelection === 'Scissors') {
         if (computerSelection === 'Rock') {
-            console.log("You lose! ${computerSelection} beats ${playerSelection}");
+            console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
         } else {
-            console.log("You win! ${playerSelection} beats ${computerSelection}");
+            console.log(`You win! ${playerSelection} beats ${computerSelection}`);
         }
     }
 
