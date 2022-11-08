@@ -22,10 +22,13 @@ button {
     justify-content: center;
 
     outline:10px solid black;
+    cursor: pointer;
 }
+
 
 
 img {
     height: 350px;
     width: 350px;
 }
+
