@@ -44,11 +44,13 @@ function playGame(playerSelection, computerSelection) {
 
 }
 
-const buttons = document.querySelectorAll('button')
+const container = document.querySelector('.container');
+const buttons = container.querySelectorAll(':scope > button')
 const playerScore = document.querySelector('.playerScore');
 const computerScore = document.querySelector('.computerScore');
 const roundWinner = document.querySelector('.roundWinner');
 const overallWinner = document.querySelector('.overallWinner');
+const reset = document.querySelector('.reset');
 let round = 1;
 
 buttons.forEach(button => {
@@ -96,3 +98,10 @@ function checkWinner() {
 }
 
 
+reset.addEventListener('click', e => {
+    round = 1;
+    playerScore.textContent = 0;
+    computerScore.textContent = 0;
+    roundWinner.textContent = "";
+    overallWinner.textContent = "";
+});
