@@ -5,7 +5,7 @@ h1 {
 .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 10px;
 }
 
@@ -32,3 +32,32 @@ img {
     width: 350px;
 }
 
+.players {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.players > * {
+    font-size: 100px;
+}
+
+.score > * {
+    font-size: 100px;
+}
+
+.roundWinner {
+    text-align:center;
+    font-size: 50px;
+}
+
+.overallWinner {
+    text-align:center;
+    font-size: 150px;
+}
