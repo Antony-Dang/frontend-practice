@@ -1,14 +1,41 @@
 .grid {
-    width: 100%;
-    height: 100%;
+    width: 960px;
+    height: 960px;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
 }
 
-.square {
-    width: 24%;
-    height: 24%;
-    border-color: black;
-    border-width: 5px;
-    border-style: solid;
+.row {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
 }
+
+.col {
+    border: solid;
+    border-color: black;
+}
+
+.hover {
+    border-color: grey;
+    background-color: lightblue;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px
+}
+
+.buttons {
+    display: flex;
+    align-items: space-between;
+    gap: 10px;
+}
+
+button {
+    font-size: 30px;
+}
+
