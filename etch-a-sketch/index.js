@@ -17,7 +17,6 @@ function createGrid(dimensions = 16) {
             col.classList.add('col');
 
             col.style.width = `${size}%`;
-            col.style.height = `${size}%`;
             row.appendChild(col);
         }
         grid.appendChild(row);
