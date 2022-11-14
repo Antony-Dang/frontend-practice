@@ -8,10 +8,49 @@ initialiseOps();
 initialiseClear();
 initialiseEval();
 
+function evaluate() {
+    topStack = stack[stack.length - 1] 
+    if (stack.length == 0) {
+        return;
+    }
+
+    if (ops.includes(topStack)) {
+        alert("Can't end on operation");
+        return;
+    }
+    let total = parseInt(stack[0]);
+    let op;
+    for (let i = 1; i < stack.length; i++) {
+        input = stack[i];
+        if (ops.includes(input)) {
+            op = input;
+        } else {
+            input = parseInt(input);
+            if (op === "Add") {
+                total = add(total, input);
+            }
+            if (op === "Sub") {
+                total = sub(total, input);
+            }
+            if (op === "Mul") {
+                total = multiply(total, input);
+            }
+            if (op === "Div") {
+                total = divide(total, input);
+            }
+        }
+
+    }
+    stack = [];
+    total = total.toString()
+    stack.push(total);
+
+    return total;
+}
 
 function initialiseEval() {
     let evalButton = document.querySelector("#equal");
-    clearBuevalButtontton.addEventListener('click', function(e) {
+    evalButton.addEventListener('click', function(e) {
         let total = evaluate();
         console.log(total);
     });
@@ -39,26 +78,6 @@ function initialiseNumbers() {
     }
 }
 
-
-function addToStack(input) {
-    topStack = stack[stack.length - 1]
-
-    // If input is operation check if top stack is operation
-    if (ops.includes(input)) {
-        if (ops.includes(topStack)) {
-            return;
-        }
-    } else {
-        if (topStack != null && !ops.includes(topStack)) {
-            stack.pop();
-            input = topStack + input;
-        }
-    }
-
-    stack.push(input.toString());
-}
-
-
 function initialiseOps() {
     let opId = "#op"; 
     ops.forEach(op => {
@@ -72,6 +91,45 @@ function initialiseOps() {
         });
     })
 }
+
+function addToStack(input) {
+    topStack = stack[stack.length - 1]
+
+    // If input is operation check if top stack is operation
+    if (ops.includes(input)) {
+        if (ops.includes(topStack)) {
+            return;
+        }
+
+        doInstantOp();
+    } else {
+        if (topStack != null && !ops.includes(topStack)) {
+            stack.pop();
+            input = topStack + input;
+        }
+    }
+
+    stack.push(input.toString());
+}
+
+function doInstantOp() {
+    if (stack.length < 3) {
+        return
+    }
+    op = stack[stack.length - 2] 
+    if (instantOps.includes(op)) {
+        newNum = stack.pop()
+        op = stack.pop()
+        prevNum = stack.pop()
+
+        if (op === "Div") {
+            stack.push(divide(prevNum, newNum).toString());
+        } else {
+            stack.push(multiply(prevNum, newNum).toString());
+        }
+    }
+}
+
 
 function addOpToStack(op) {
     if (stack.length == 0) {
