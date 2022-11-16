@@ -1,6 +1,6 @@
-import app from "./server.js";
-import mongodb from "mongodb";
-import dotenv from "dotenv";
+import app from "./server.js"
+import mongodb from "mongodb"
+import dotenv from "dotenv"
 
 dotenv.config()
 const MongoClient = mongodb.MongoClient
@@ -11,14 +11,15 @@ MongoClient.connect(
         process.env.TRIVIA_DB_URI, {
             maxPoolSize: 50,
             wtimeoutMS: 2500,
+            useNewUrlParser:true
         }
     )
     .catch(err => {
         console.error(err.stack)
-        process.exit()
+        process.exit(1)
     })
     .then(async client => {
         app.listen(port, () => {
-            console.log(`Listening to port from index.js ${port}`);
-        })
+            console.log(`listening on port ${port} index.js`)
+          })
     }) 
