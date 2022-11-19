@@ -19,8 +19,6 @@ export default class questionsDAO {
 
     static async getQuestions({
       filters = null,
-      page = 0,
-      questionsPerPage,
     } = {}) {
       let query 
       if (filters) {
@@ -33,5 +31,26 @@ export default class questionsDAO {
         }
         
       }
+      let cursor;
+
+      try {
+        cursor = await questions.find(query);
+      } catch (e) {
+        console.error(`Unable to issue find command, ${e} questionsDAO`)
+        return { questionsList: [], totalQuestions: 0 }
+      }
+
+      try {
+        let questionsList = await cursor.toArray();
+        let totalNumQuestions = await question.countDocuments(query);
+
+        return {questionsList, totalNumQuestions};
+      } catch (e) {
+        console.error(
+          `Unable to convert cursor to array or problem counting documents, ${e}`,
+        )
+        return { questionsList: [], totalNumQuestions: 0};
+      }
     }
+
 }
