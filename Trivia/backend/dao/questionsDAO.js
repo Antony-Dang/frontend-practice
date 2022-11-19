@@ -42,12 +42,12 @@ export default class questionsDAO {
 
       try {
         let questionsList = await cursor.toArray();
-        let totalNumQuestions = await question.countDocuments(query);
+        let totalNumQuestions = await questions.countDocuments(query);
 
         return {questionsList, totalNumQuestions};
       } catch (e) {
         console.error(
-          `Unable to convert cursor to array or problem counting documents, ${e}`,
+          `Unable to convert cursor to array or problem counting documents, ${e} questionsDAO`,
         )
         return { questionsList: [], totalNumQuestions: 0};
       }

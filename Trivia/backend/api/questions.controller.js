@@ -1,4 +1,4 @@
-import questionsDAO from "../dao/questionsDAO";
+import questionsDAO from "../dao/questionsDAO.js";
 
 export default class questionsController {
 
@@ -23,7 +23,7 @@ export default class questionsController {
             total_num_questions: totalNumQuestions
         }
     
-        res.join(questionsResponse)
+        res.json(questionsResponse)
     }
 
 }
